@@ -11,16 +11,16 @@
         <form method="post" id="frmMain" name="frmMain">
             <table width="100%">
                 <tr>
-                    <td><% lblLiteral.Render() %>
-                        <% txtEdit.Render() %>
+                    <td><% lblLiteral %>
+                        <% txtEdit %>
                     </td>
                 </tr>
             </table>
             <%
-                btnSend.Render()
+                btnSend
             %>
             <%
-                btnTest.Render()
+                btnTest
             %>
         </form>
     </body>

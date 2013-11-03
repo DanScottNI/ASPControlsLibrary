@@ -18,7 +18,7 @@
             
         end Sub
 
-        public sub Render()
+        public default sub Render()
             Response.Write Text
         end sub
     End Class

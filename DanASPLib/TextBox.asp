@@ -32,7 +32,7 @@
             end if
         end Sub
 
-        public sub Render()
+        public default sub Render()
             Response.Write "<input type=""text"" value=""" & Text & """ name=""" & ID & """>"
         end sub
     End Class

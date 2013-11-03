@@ -79,5 +79,6 @@
 	End Function
 
     dim Page
+    set Page = nothing
     set Page = new BasePageClass
 %>
