@@ -1,18 +1,27 @@
 ﻿<!--#include file="DanASPLib/Page.asp"-->
 <!--#include file="DanASPLib/Button.asp"-->
 <!--#include file="DanASPLib/Literal.asp"-->
+<!--#include file="DanASPLib/TextBox.asp"-->
 <%
     ' Submit button for the form.
     dim btnSend
+    dim btnTest
     dim lblLiteral
+    dim txtEdit
     
     ' Initialises the controls on the form.
     Sub Page_Init()
       set btnSend = new Button
       btnSend.New_Button("btnSend")
 
+      set btnTest = new Button
+      btnTest.New_Button("btnTest")
+
       set lblLiteral = new Literal
       Call lblLiteral.New_Literal()
+
+      set txtEdit = new TextBox
+      txtEdit.New_TextBox("txtEdit")
     End Sub
 
     ' Initialises the page's state.
@@ -29,6 +38,10 @@
         Response.Write "btnSend_Click()"
     End Sub
 
+    Sub btnTest_Click()
+        Response.Write "btnTest_Click()"
+    End Sub
+
     ' Page Setup.
     Call Page_Init()
     Call Page_Load()
@@ -36,5 +49,9 @@
     ' Check the form that the btnSend control has posted a value.
     if isEmpty(Request(btnSend.ID)) = false then
         Call btnSend_Click()
+    end if
+
+    if isEmpty(Request(btnTest.ID)) = false then
+        Call btnTest_Click()
     end if
 %>

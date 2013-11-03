@@ -1,9 +1,9 @@
-﻿<%
-    Class Button
+﻿<%   Class TextBox
         private m_ID
 
         public sub Class_Initialize()
-            m_Text= "Submit"    
+            
+            m_Text= ""    
         end sub
 
         public property Let ID(pID)
@@ -24,12 +24,16 @@
             Text = m_Text
         end property
 
-        public Sub New_Button(pID)
+        public Sub New_TextBox(pID)
             ID = pID
+
+            if (isEmpty(Request.Form(pID)) = false) then
+                Text = Request.Form(pID)
+            end if
         end Sub
 
         public sub Render()
-            Response.Write "<input type=""submit"" value=""" & Text & """ name=""" & ID & """>"
+            Response.Write "<input type=""text"" value=""" & Text & """ name=""" & ID & """>"
         end sub
     End Class
 %>
