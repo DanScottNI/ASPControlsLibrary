@@ -1,9 +1,11 @@
 ﻿<%
+    ' Button Class for HTML buttons
+    ' To hook up events, you should create
     Class Button
         private m_ID
 
         public sub Class_Initialize()
-            m_Text= "Submit"    
+            m_Text= "Submit"
         end sub
 
         public property Let ID(pID)
@@ -26,6 +28,7 @@
 
         public Sub New_Button(pID)
             ID = pID
+            Call Page.NewPostBackHandler(pID, pID & "_Click")
         end Sub
 
         public sub Render()

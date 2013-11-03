@@ -42,16 +42,5 @@
         Response.Write "btnTest_Click()"
     End Sub
 
-    ' Page Setup.
-    Call Page_Init()
-    Call Page_Load()
-
-    ' Check the form that the btnSend control has posted a value.
-    if isEmpty(Request(btnSend.ID)) = false then
-        Call btnSend_Click()
-    end if
-
-    if isEmpty(Request(btnTest.ID)) = false then
-        Call btnTest_Click()
-    end if
+    Call Page.Load()
 %>
