@@ -26,6 +26,13 @@
             <%
                 cbTest
             %>
+            <%
+                rblTest
+            %>
+
+            <%
+                chkTest
+            %>
         </form>
     </body>
 </html>

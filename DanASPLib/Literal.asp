@@ -15,7 +15,6 @@
         end property
 
         public Sub New_Literal()
-            
         end Sub
 
         public default sub Render()

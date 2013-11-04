@@ -1,5 +1,5 @@
 ﻿<%
-    ' Button Class for HTML buttons
+    ' Button class for HTML buttons
     Class Button
         private m_ID
         private m_Text

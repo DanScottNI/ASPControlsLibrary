@@ -3,6 +3,8 @@
 <!--#include file="DanASPLib/Literal.asp"-->
 <!--#include file="DanASPLib/TextBox.asp"-->
 <!--#include file="DanASPLib/DropDownList.asp"-->
+<!--#include file="DanASPLib/RadioButtonList.asp"-->
+<!--#include file="DanASPLib/CheckBox.asp"-->
 <%
     ' Submit button for the form.
     dim btnSend : set btnSend = nothing
@@ -10,7 +12,9 @@
     dim lblLiteral : set lblLiteral = nothing
     dim txtEdit : set txtEdit = nothing
     dim cbTest : set cbTest = nothing
-    
+    dim rblTest : set rblTest = nothing
+    dim chkTest : set chkTest = nothing
+
     ' Initialises the controls on the form.
     Sub Page_Init()
       set btnSend = new Button
@@ -31,6 +35,18 @@
       Call cbTest.AddListItem("Test", "1")
       Call cbTest.AddListItem("Test2", "2")
       Call cbTest.AddListItemWithColour("Test3", "3", "red")
+
+      set rblTest = new RadioButtonList
+      rblTest.New_RadioButtonList("rblTest")
+
+      Call rblTest.AddListItem("Test1", "1")
+      Call rblTest.AddListItem("Test2", "2")
+      Call rblTest.AddListItem("Test3", "3")
+
+      'rblTest.SelectedValue = "2"
+
+      set chktest = new CheckBox
+      chkTest.New_CheckBox("chkTest")
     End Sub
 
     ' Initialises the page's state.
