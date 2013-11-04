@@ -23,6 +23,7 @@
 
       set txtEdit = new TextBox
       txtEdit.New_TextBox("txtEdit")
+      txtEdit.TextMode = TextModeMultiLine
     End Sub
 
     ' Initialises the page's state.

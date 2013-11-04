@@ -11,7 +11,8 @@
         <form method="post" id="frmMain" name="frmMain">
             <table width="100%">
                 <tr>
-                    <td><% lblLiteral %>
+                    <td>
+                        <% lblLiteral %>
                         <% txtEdit %>
                     </td>
                 </tr>

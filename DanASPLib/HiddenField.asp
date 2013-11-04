@@ -1,11 +1,10 @@
-﻿<%
-    ' Button Class for HTML buttons
-    Class Button
+﻿<% 
+    Class HiddenField
         private m_ID
         private m_Text
 
         public sub Class_Initialize()
-            m_Text= "Submit"
+            m_Text= ""
         end sub
 
         private property Let ID(pID)
@@ -24,13 +23,16 @@
             Text = m_Text
         end property
 
-        public Sub New_Button(pID)
+        public sub New_HiddenField(pID)
             ID = pID
-            Call Page.NewPostBackHandler(pID, pID & "_Click")
+
+            if (isEmpty(Request.Form(ID)) = false) then
+                Text = Request.Form(ID)
+            end if
         end Sub
 
         public default sub Render()
-            Response.Write "<input type=""submit"" value=""" & Text & """ name=""" & ID & """>"
+            Response.Write "<input type=""hidden"" value=""" & Text & """ id=""" & ID & """ name=""" & ID & """>"
         end sub
     End Class
 %>
