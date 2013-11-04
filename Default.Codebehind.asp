@@ -2,13 +2,14 @@
 <!--#include file="DanASPLib/Button.asp"-->
 <!--#include file="DanASPLib/Literal.asp"-->
 <!--#include file="DanASPLib/TextBox.asp"-->
-<!--#include file="DanASPLib/ListItemCollection.asp"-->
+<!--#include file="DanASPLib/DropDownList.asp"-->
 <%
     ' Submit button for the form.
-    dim btnSend
-    dim btnTest
-    dim lblLiteral
-    dim txtEdit
+    dim btnSend : set btnSend = nothing
+    dim btnTest : set btnTest = nothing
+    dim lblLiteral : set lblLiteral = nothing
+    dim txtEdit : set txtEdit = nothing
+    dim cbTest : set cbTest = nothing
     
     ' Initialises the controls on the form.
     Sub Page_Init()
@@ -23,7 +24,13 @@
 
       set txtEdit = new TextBox
       txtEdit.New_TextBox("txtEdit")
-      txtEdit.TextMode = TextModeMultiLine
+
+      set cbTest = new DropDownList
+      cbTest.New_DropDownList("cbTest")
+
+      Call cbTest.AddListItem("Test", "1")
+      Call cbTest.AddListItem("Test2", "2")
+      Call cbTest.AddListItemWithColour("Test3", "3", "red")
     End Sub
 
     ' Initialises the page's state.

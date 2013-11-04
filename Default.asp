@@ -23,6 +23,9 @@
             <%
                 btnTest
             %>
+            <%
+                cbTest
+            %>
         </form>
     </body>
 </html>
